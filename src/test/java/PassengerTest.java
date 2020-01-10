@@ -27,8 +27,18 @@ public class PassengerTest {
     }
 
     @Test
+    public void canGetFlight() {
+        assertEquals(null, passenger.getFlight());
+    }
+
+    @Test
     public void canAddFlightToPassenger() {
         passenger.addFlight(flight);
         assertEquals(flight, passenger.getFlight());
+    }
+
+    @Test
+    public void canGetSeatNumber() {
+        assertEquals(null, passenger.getSeatNumber());
     }
 }

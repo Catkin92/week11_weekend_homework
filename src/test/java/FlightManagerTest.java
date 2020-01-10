@@ -58,11 +58,14 @@ public class FlightManagerTest {
         flightManager2.addPassenger(passenger2);
         flightManager2.addPassenger(passenger3);
         assertEquals(1, flight2.getPassengerCount());
+        assertEquals(flight2, passenger2.getFlight());
+        assertEquals(null, passenger3.getFlight());
     }
 
     @Test
     public void cannotAddPassengerToFlightTooMuchBaggage() {
         flightManager2.addPassenger(passenger1);
         assertEquals(0, flight2.getPassengerCount());
+        assertEquals(null, passenger1.getFlight());
     }
 }
