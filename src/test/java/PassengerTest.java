@@ -3,22 +3,22 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-public class PassangerTest {
+public class PassengerTest {
 
-    private Passanger passanger;
+    private Passenger passenger;
 
     @Before
     public void before() {
-        passanger = new Passanger("Eugene Kim", 2);
+        passenger = new Passenger("Eugene Kim", 2);
     }
 
     @Test
     public void canGetName() {
-        assertEquals("Eugene Kim", passanger.getName());
+        assertEquals("Eugene Kim", passenger.getName());
     }
 
     @Test
     public void canGetNumberOfBags() {
-        assertEquals(2, passanger.getNumberOfBags());
+        assertEquals(2, passenger.getNumberOfBags());
     }
 }
