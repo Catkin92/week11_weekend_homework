@@ -38,4 +38,9 @@ public class FlightTest {
     public void canGetFlightDepartureTime() {
         assertEquals("10:00", flight.getDepartureTime());
     }
+
+    @Test
+    public void passengerCountStartsAtZero() {
+        assertEquals(0, flight.getPassengerCount());
+    }
 }

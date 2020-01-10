@@ -39,4 +39,8 @@ public class Flight {
     public String getDepartureTime() {
         return this.departureTime;
     }
+
+    public int getPassengerCount() {
+        return this.passengers.size();
+    }
 }
