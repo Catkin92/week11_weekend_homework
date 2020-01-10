@@ -6,16 +6,20 @@ import static org.junit.Assert.assertEquals;
 public class FlightTest {
 
     private Plane plane;
+    private Plane plane2;
     private Flight flight;
     private Flight flight2;
     private Passenger passenger;
+    private Passenger passenger2;
 
     @Before
     public void before() {
         plane = new Plane(PlaneType.BOEING747);
+        plane2 = new Plane(PlaneType.BOEING787);
         flight = new Flight(plane, "FR756", "AMS", "EDI", "10:00");
-        flight2 = new Flight(plane, "GZ724", "SIA", "GLA", "12:00");
+        flight2 = new Flight(plane2, "GZ724", "SIA", "GLA", "12:00");
         passenger = new Passenger("Eugene Kim", 2);
+        passenger2 = new Passenger("Nelson Bananabread", 1);
         flight2.addPassenger(passenger);
     }
 
@@ -59,5 +63,11 @@ public class FlightTest {
     public void canGetNumberOfAvailableSeatsOnFlight() {
         assertEquals(30, flight.availableSeatCount());
         assertEquals(29, flight2.availableSeatCount());
+    }
+
+    @Test
+    public void cannotAddPassengerToFlightMaxCapacity() {
+        flight2.addPassenger(passenger2);
+        assertEquals(1, flight2.getPassengerCount());
     }
 }
