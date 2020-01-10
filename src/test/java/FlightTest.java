@@ -68,12 +68,7 @@ public class FlightTest {
     @Test
     public void canGetNumberOfAvailableSeatsOnFlight() {
         assertEquals(30, flight.availableSeatCount());
-        assertEquals(29, flight2.availableSeatCount());
+        assertEquals(0, flight2.availableSeatCount());
     }
 
-    @Test
-    public void cannotAddPassengerToFlightMaxCapacity() {
-        flight2.addPassenger(passenger2);
-        assertEquals(1, flight2.getPassengerCount());
-    }
 }

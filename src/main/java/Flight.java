@@ -54,8 +54,6 @@ public class Flight {
     }
 
     public void addPassenger(Passenger passenger) {
-        if (this.availableSeatCount() > 0) {
-            this.passengers.add(passenger);
-        }
+        this.passengers.add(passenger);
     }
 }
