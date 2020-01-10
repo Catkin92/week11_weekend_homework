@@ -36,4 +36,11 @@ public class FlightManagerTest {
     public void canCalculateWeightBookedByPassenger() {
         assertEquals(10, flightManager.weightBookedByPassenger(passenger1));
     }
+
+    @Test
+    public void canCalculateBaggageWeightRemaining() {
+        flight1.addPassenger(passenger1);
+        flight1.addPassenger(passenger2);
+        assertEquals(1485, flightManager.calculateWeightRemaining());
+    }
 }

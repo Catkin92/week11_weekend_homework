@@ -60,6 +60,12 @@ public class FlightTest {
     }
 
     @Test
+    public void canGetPassengerArrayList() {
+        flight.addPassenger(passenger);
+        assertEquals(1, flight.getPassengers().size());
+    }
+
+    @Test
     public void canGetNumberOfAvailableSeatsOnFlight() {
         assertEquals(30, flight.availableSeatCount());
         assertEquals(29, flight2.availableSeatCount());

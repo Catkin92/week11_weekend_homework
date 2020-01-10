@@ -16,4 +16,14 @@ public class FlightManager {
         int weight = 5 * passenger.getNumberOfBags();
         return weight;
     }
+
+    public int calculateWeightRemaining() {
+        Plane plane = this.flight.getPlane();
+        int weightRemaining = plane.getWeight() / 2;
+
+        for (Passenger passenger : this.flight.getPassengers()) {
+            weightRemaining -= weightBookedByPassenger(passenger);
+        }
+        return weightRemaining;
+    }
 }

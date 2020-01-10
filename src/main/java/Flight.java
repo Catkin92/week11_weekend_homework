@@ -31,7 +31,6 @@ public class Flight {
         return this.destination;
     }
 
-
     public String getDepartureAirport() {
         return this.departureAirport;
     }
@@ -42,6 +41,11 @@ public class Flight {
 
     public int getPassengerCount() {
         return this.passengers.size();
+    }
+
+    public ArrayList<Passenger> getPassengers() {
+        ArrayList<Passenger> passengerList =  this.passengers;
+        return passengerList;
     }
 
     public int availableSeatCount() {
