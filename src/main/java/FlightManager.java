@@ -31,6 +31,7 @@ public class FlightManager {
 
         if (this.flight.availableSeatCount() > 0 && this.calculateWeightRemaining() >= this.weightBookedByPassenger(passenger)) {
             this.flight.addPassenger(passenger);
+            passenger.addFlight(this.flight);
         }
     }
 }

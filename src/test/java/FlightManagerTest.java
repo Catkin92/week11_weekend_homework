@@ -50,6 +50,7 @@ public class FlightManagerTest {
     public void canAddPassengerToFlight() {
         flightManager.addPassenger(passenger1);
         assertEquals(29, flight1.availableSeatCount());
+        assertEquals(flight1, passenger1.getFlight());
     }
 
     @Test
