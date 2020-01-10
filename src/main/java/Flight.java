@@ -43,4 +43,15 @@ public class Flight {
     public int getPassengerCount() {
         return this.passengers.size();
     }
+
+    public int availableSeatCount() {
+        int availableSeats = this.plane.getCapacity() - this.getPassengerCount();
+        return availableSeats;
+    }
+
+    public void addPassenger(Passenger passenger) {
+        if (this.availableSeatCount() > 0) {
+            this.passengers.add(passenger);
+        }
+    }
 }
