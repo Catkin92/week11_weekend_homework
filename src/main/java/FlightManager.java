@@ -11,4 +11,9 @@ public class FlightManager {
         int availableWeight = (plane.getWeight() / 2) / plane.getCapacity();
         return availableWeight;
     }
+
+    public int weightBookedByPassenger(Passenger passenger) {
+        int weight = 5 * passenger.getNumberOfBags();
+        return weight;
+    }
 }

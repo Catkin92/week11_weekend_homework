@@ -11,6 +11,8 @@ public class FlightManagerTest {
     private Plane plane2;
     private Flight flight1;
     private Flight flight2;
+    private Passenger passenger1;
+    private Passenger passenger2;
 
     @Before
     public void before() {
@@ -20,11 +22,18 @@ public class FlightManagerTest {
         flight2 = new Flight(plane2, "GZ724", "SIA", "GLA", "12:00");
         flightManager = new FlightManager(flight1);
         flightManager2 = new FlightManager(flight2);
+        passenger1 = new Passenger("Eugene Kim", 2);
+        passenger2 = new Passenger("Nelson Bananabread", 1);
     }
 
     @Test
     public void canCalculateBaggageWeightAvailablePerPassenger() {
         assertEquals(50, flightManager.calculateWeightPerPassenger());
         assertEquals(5, flightManager2.calculateWeightPerPassenger());
+    }
+
+    @Test
+    public void canCalculateWeightBookedByPassenger() {
+        assertEquals(10, flightManager.weightBookedByPassenger(passenger1));
     }
 }
