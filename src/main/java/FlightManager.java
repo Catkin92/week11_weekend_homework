@@ -27,6 +27,15 @@ public class FlightManager {
         return weightRemaining;
     }
 
+    public int getSeatNumber() {
+        int min = 1;
+        int max = this.flight.getPlane().getCapacity();
+
+        int seatNumber = (int)Math.random() * max + min;
+
+        return seatNumber;
+    }
+
     public void addPassenger(Passenger passenger) {
 
         if (this.flight.availableSeatCount() > 0 && this.calculateWeightRemaining() >= this.weightBookedByPassenger(passenger)) {
